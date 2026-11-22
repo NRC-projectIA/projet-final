@@ -70,6 +70,50 @@
       }
 
       /* ===== HEADER / HERO ===== */
+      .skip-link {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        z-index: 20;
+        padding: 0.75rem 1rem;
+        background: white;
+        color: var(--primary);
+        border-radius: 8px;
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 4.5rem;
+        padding: 0.75rem max(1.5rem, calc((100% - 1200px) / 2));
+        background: #071a2e;
+      }
+
+      .site-nav a {
+        color: #d7e8fb;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.55rem 0.9rem;
+        border-radius: 8px;
+      }
+
+      .site-nav a:hover,
+      .site-nav a:focus-visible {
+        color: white;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      a:focus-visible {
+        outline: 3px solid #6fa8f0;
+        outline-offset: 3px;
+      }
+
       .hero {
         min-height: 90vh;
         background: linear-gradient(
@@ -467,6 +511,12 @@
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="code-site.html" aria-current="page">Accueil</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
     <!-- HERO -->
     <header class="hero">
       <div class="hero-content">
@@ -477,7 +527,7 @@
     </header>
 
     <!-- CONTENU PRINCIPAL -->
-    <main class="container">
+    <main class="container" id="contenu">
       <!-- Introduction -->
       <section class="intro">
         <p>
@@ -617,7 +667,7 @@
       <p>© 2025 · Histoire des ordinateurs · Réalisé avec passion ⚡</p>
       <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8">
         <a href="#">Retour en haut</a> · <a href="#">Sources</a> ·
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
       </p>
     </footer>
   </body>
